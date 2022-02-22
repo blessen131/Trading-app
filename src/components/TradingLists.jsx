@@ -6,7 +6,6 @@ function TradingLists() {
 
   return (
     <div>
-      {" "}
       <table>
         <tbody>
           <tr>
