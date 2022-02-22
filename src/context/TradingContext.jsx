@@ -35,12 +35,24 @@ export const TradingProvider = ({ children }) => {
       setTradingData(tradingData.filter((item) => item.id !== id));
     }
   };
+  const searchResults = async (text) => {
+    const data = tradingData;
+    const filteredData = data.filter(
+      (e) =>
+        e.firstName.toLowerCase().includes(text.toLowerCase()) ||
+        e.lastName.includes(text) ||
+        e.teamName.toLowerCase().includes(text.toLowerCase())
+    );
+    setTradingData(filteredData);
+  };
   return (
     <TradingContext.Provider
       value={{
         tradingData,
         addTradingData,
         deleteTradingData,
+        searchResults,
+        fetchTradingData,
       }}
     >
       {children}
