@@ -3,13 +3,12 @@ import Card from "./shared/Card";
 import { FaTimes, FaEdit } from "react-icons/fa";
 import TradingContext from "../context/TradingContext";
 
-function TradingListItem() {
-  const { tradingData } = useContext(TradingContext);
-  const [item] = tradingData;
+function TradingListItem({ item }) {
+  const { deleteTradingData } = useContext(TradingContext);
   return (
     <Card>
       <div className="num-display">{item.playerNo}</div>
-      <button className="close">
+      <button className="close" onClick={() => deleteTradingData(item.id)}>
         <FaTimes color="purple" />
       </button>
       <button className="edit">
