@@ -1,4 +1,3 @@
-import { FaShoppingBag } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 function Footer({ bgColor, textColor }) {
@@ -13,7 +12,7 @@ function Footer({ bgColor, textColor }) {
         <Link to="/about" className="btn btn-ghost btn-sm rounded-btn">
           About
         </Link>
-        <Link to="/about" className="btn btn-ghost btn-sm rounded-btn">
+        <Link to="/list" className="btn btn-ghost btn-sm rounded-btn">
           List
         </Link>
 

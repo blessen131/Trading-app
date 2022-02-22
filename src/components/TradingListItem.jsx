@@ -4,7 +4,7 @@ import { FaTimes, FaEdit } from "react-icons/fa";
 import TradingContext from "../context/TradingContext";
 
 function TradingListItem() {
-  const { tradingData, handleTrading } = useContext(TradingContext);
+  const { tradingData } = useContext(TradingContext);
   const [item] = tradingData;
   return (
     <Card>

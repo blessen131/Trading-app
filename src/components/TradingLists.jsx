@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import TradingListItem from "./TradingListItem";
 import TradingContext from "../context/TradingContext";
 function TradingLists() {
-  const { tradingData, handleTrading } = useContext(TradingContext);
+  const { tradingData } = useContext(TradingContext);
   return (
     <div>
       {tradingData.map((item) => (

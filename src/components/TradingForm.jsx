@@ -4,7 +4,7 @@ import Card from "./shared/Card";
 import Button from "./shared/Button";
 import TradingContext from "../context/TradingContext";
 function TradingForm() {
-  const { tradingData, handleTrading } = useContext(TradingContext);
+  const { handleTrading } = useContext(TradingContext);
   function handleChange(evt) {
     const value = evt.target.value;
     setInputs({
@@ -22,7 +22,7 @@ function TradingForm() {
   });
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (inputs.firstName == "") {
+    if (inputs.firstName === "") {
       alert("Please fill all the required values");
     } else {
       handleTrading(inputs);

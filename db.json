@@ -1,0 +1,20 @@
+{
+  "tradingdata": [
+    {
+      "id": 1,
+      "firstName": "firstName",
+      "lastName": "lastName",
+      "teamName": "APO",
+      "playerNo": 10,
+      "estimatedValue": 10
+    },
+    {
+      "id": 2,
+      "firstName": "firstName2",
+      "lastName": "lastName3",
+      "teamName": "APOO",
+      "playerNo": 20,
+      "estimatedValue": 20
+    }
+  ]
+}
