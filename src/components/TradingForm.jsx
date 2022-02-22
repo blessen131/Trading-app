@@ -1,8 +1,10 @@
 import React from "react";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import Card from "./shared/Card";
 import Button from "./shared/Button";
-function TradingForm({ addTrading }) {
+import TradingContext from "../context/TradingContext";
+function TradingForm() {
+  const { tradingData, handleTrading } = useContext(TradingContext);
   function handleChange(evt) {
     const value = evt.target.value;
     setInputs({
@@ -23,7 +25,7 @@ function TradingForm({ addTrading }) {
     if (inputs.firstName == "") {
       alert("Please fill all the required values");
     } else {
-      addTrading(inputs);
+      handleTrading(inputs);
     }
   };
 

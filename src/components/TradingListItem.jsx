@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import Card from "./shared/Card";
 import { FaTimes, FaEdit } from "react-icons/fa";
+import TradingContext from "../context/TradingContext";
 
-function TradingListItem({ item }) {
+function TradingListItem() {
+  const { tradingData, handleTrading } = useContext(TradingContext);
+  const [item] = tradingData;
   return (
     <Card>
       <div className="num-display">{item.playerNo}</div>

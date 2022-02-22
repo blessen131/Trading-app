@@ -2,19 +2,14 @@ import TradingForm from "../TradingForm";
 import { useState } from "react";
 import TradingLists from "../TradingLists";
 import TradingStatus from "../TradingStatus";
+import { TradingProvider } from "../../context/TradingContext";
 function Home() {
-  const [tradingData, setTradingData] = useState([]);
-
-  const handleTrading = (inputs) => {
-    setTradingData([inputs, ...tradingData]);
-  };
-
   return (
-    <>
-      <TradingForm addTrading={(inputs) => handleTrading(inputs)} />
-      <TradingStatus tradingLists={tradingData} />
-      <TradingLists tradingLists={tradingData} />
-    </>
+    <TradingProvider>
+      <TradingForm />
+      <TradingStatus />
+      <TradingLists />
+    </TradingProvider>
   );
 }
 

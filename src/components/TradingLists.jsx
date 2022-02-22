@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import TradingListItem from "./TradingListItem";
-
-function TradingLists({ tradingLists }) {
+import TradingContext from "../context/TradingContext";
+function TradingLists() {
+  const { tradingData, handleTrading } = useContext(TradingContext);
   return (
     <div>
-      {tradingLists.map((item) => (
+      {tradingData.map((item) => (
         <TradingListItem key={item.key} item={item} />
       ))}
     </div>
