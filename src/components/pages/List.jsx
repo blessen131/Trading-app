@@ -1,24 +1,30 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Button from "../shared/Button";
 import TradingContext from "../../context/TradingContext";
 import Card from "../shared/Card";
 import TradingStatus from "../TradingStatus";
+
 function List() {
   const { tradingData, searchResults, fetchTradingData } =
     useContext(TradingContext);
   const [text, setText] = useState();
   const handleTextChange = ({ target: { value } }) => {
-    setText(value);
     if (value.length > 2) {
       searchResults(value);
     } else {
       fetchTradingData();
     }
+    setText(value);
   };
   const handleSearch = (e) => {
     e.preventDefault();
-    searchResults(text);
+    if (text) {
+      searchResults(text);
+    } else {
+      fetchTradingData();
+    }
   };
+
   return (
     <>
       <Card>
