@@ -4,6 +4,7 @@ const TradingContext = createContext();
 
 export const TradingProvider = ({ children }) => {
   const [tradingData, setTradingData] = useState([]);
+  const [currentData, setCurrentData] = useState([]);
   useEffect(() => {
     fetchTradingData();
   }, []);
@@ -26,6 +27,7 @@ export const TradingProvider = ({ children }) => {
     });
     const data = await response.json();
     setTradingData([data, ...tradingData]);
+    setCurrentData([...currentData, inputs]);
   };
   // Delete Trading data
   const deleteTradingData = async (id) => {
@@ -53,6 +55,7 @@ export const TradingProvider = ({ children }) => {
         deleteTradingData,
         searchResults,
         fetchTradingData,
+        currentData,
       }}
     >
       {children}

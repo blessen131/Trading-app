@@ -2,8 +2,7 @@ import React, { useContext } from "react";
 import { FaTimes } from "react-icons/fa";
 import TradingContext from "../context/TradingContext";
 function TradingLists() {
-  const { tradingData, deleteTradingData } = useContext(TradingContext);
-
+  const { deleteTradingData, currentData } = useContext(TradingContext);
   return (
     <div>
       <table>
@@ -15,7 +14,7 @@ function TradingLists() {
             <th>Estimated Value</th>
             <th>Action</th>
           </tr>
-          {tradingData.map((item) => (
+          {currentData?.map((item) => (
             <tr key={item.id}>
               <td>{item.firstName + " " + item.lastName}</td>
               <td>{item.teamName}</td>
@@ -32,6 +31,11 @@ function TradingLists() {
               </td> */}
             </tr>
           ))}
+          {currentData.length === 0 && (
+            <tr key="nodata">
+              <td colSpan={5}>No Data </td>
+            </tr>
+          )}
         </tbody>
       </table>
     </div>

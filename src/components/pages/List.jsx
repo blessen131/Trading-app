@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import Button from "../shared/Button";
 import TradingContext from "../../context/TradingContext";
 import Card from "../shared/Card";
-import TradingStatus from "../TradingStatus";
+import ListStatus from "../ListStatus";
 
 function List() {
   const { tradingData, searchResults, fetchTradingData } =
@@ -40,7 +40,7 @@ function List() {
           </div>
         </form>
       </Card>
-      <TradingStatus className="list-status" />
+      <ListStatus />
       <Card>
         <table>
           <tbody>
