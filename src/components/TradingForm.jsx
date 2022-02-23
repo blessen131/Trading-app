@@ -22,7 +22,12 @@ function TradingForm() {
   });
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (inputs.firstName === "") {
+    if (
+      inputs.firstName === "" ||
+      inputs.lastName === "" ||
+      inputs.teamName === "" ||
+      inputs.playerNo === ""
+    ) {
       alert("Please fill all the required values");
     } else {
       addTradingData(inputs);

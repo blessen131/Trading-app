@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { FaTimes, FaEdit } from "react-icons/fa";
+import { FaTimes } from "react-icons/fa";
 import TradingContext from "../context/TradingContext";
 function TradingLists() {
   const { tradingData, deleteTradingData } = useContext(TradingContext);
@@ -13,10 +13,10 @@ function TradingLists() {
             <th>Team Name</th>
             <th>Player No</th>
             <th>Estimated Value</th>
-            <th colSpan={2}>Action</th>
+            <th>Action</th>
           </tr>
           {tradingData.map((item) => (
-            <tr>
+            <tr key={item.id}>
               <td>{item.firstName + " " + item.lastName}</td>
               <td>{item.teamName}</td>
               <td>{item.playerNo}</td>
@@ -27,9 +27,9 @@ function TradingLists() {
                   onClick={() => deleteTradingData(item.id)}
                 />
               </td>
-              <td>
+              {/* <td>
                 <FaEdit color="purple" />
-              </td>
+              </td> */}
             </tr>
           ))}
         </tbody>
