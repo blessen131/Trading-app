@@ -3,9 +3,10 @@ import Button from "../shared/Button";
 import TradingContext from "../../context/TradingContext";
 import Card from "../shared/Card";
 import ListStatus from "../ListStatus";
+import { FaTimes } from "react-icons/fa";
 
 function List() {
-  const { tradingData, searchResults, fetchTradingData } =
+  const { tradingData, searchResults, fetchTradingData, deleteTradingData } =
     useContext(TradingContext);
   const [text, setText] = useState();
   const handleTextChange = ({ target: { value } }) => {
@@ -49,6 +50,7 @@ function List() {
               <th>Team Name</th>
               <th>Player No</th>
               <th>Estimated Value</th>
+              <th>Action</th>
             </tr>
             {tradingData.map((item) => (
               <tr key={item.id}>
@@ -56,6 +58,12 @@ function List() {
                 <td>{item.teamName}</td>
                 <td>{item.playerNo}</td>
                 <td>{item.estimatedValue}</td>
+                <td>
+                  <FaTimes
+                    color="purple"
+                    onClick={() => deleteTradingData(item.id)}
+                  />
+                </td>
               </tr>
             ))}
           </tbody>

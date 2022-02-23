@@ -103,7 +103,7 @@ function TradingForm() {
           </label>
           <input
             type="number"
-            placeholder="Enter Estimated Value"
+            placeholder="Enter Estimated Value of Card"
             name="estimatedValue"
             value={inputs.estimatedValue}
             onChange={handleChange}

@@ -41,7 +41,11 @@ function TradingStatus() {
     };
     doc.text(title, marginLeft, 40);
     doc.autoTable(content);
-    doc.save("report_" + reportDate + "_" + reportYear + ".pdf");
+    if (data.length !== 0) {
+      doc.save("report_" + reportDate + "_" + reportYear + ".pdf");
+    } else {
+      alert("No repots available");
+    }
   };
 
   return (
