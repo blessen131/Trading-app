@@ -109,6 +109,7 @@ function About() {
               <li>Validation added if the list is empty</li>
             </ul>
           </li>
+          <li>Not found Page add for the unknown path</li>
         </ol>
       </div>
     </Card>
