@@ -3,7 +3,7 @@ import TradingLists from "../TradingLists";
 import TradingStatus from "../TradingStatus";
 
 function Home() {
-  return (
+return (
     <>
       <TradingForm />
       <TradingStatus />

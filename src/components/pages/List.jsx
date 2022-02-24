@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import Button from "../shared/Button";
 import TradingContext from "../../context/TradingContext";
 import Card from "../shared/Card";
-import ListStatus from "../ListStatus";
+import TradingStatus from "../TradingStatus";
 import { FaTimes } from "react-icons/fa";
 
 function List() {
@@ -41,7 +41,7 @@ function List() {
           </div>
         </form>
       </Card>
-      <ListStatus />
+      <TradingStatus />
       <Card>
         <table>
           <tbody>

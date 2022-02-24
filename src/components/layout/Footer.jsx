@@ -9,7 +9,7 @@ function Footer({ bgColor, textColor }) {
   return (
     <footer style={footerStyles}>
       <div>
-        <Link to="/" className="btn btn-ghost btn-sm rounded-btn">
+        <Link to="/" className="btn btn-ghost btn-sm rounded-btn" > 
           Home
         </Link>
         <Link to="/about" className="btn btn-ghost btn-sm rounded-btn">

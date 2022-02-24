@@ -42,8 +42,10 @@ export const TradingProvider = ({ children }) => {
     const filteredData = data.filter(
       (e) =>
         e.firstName.toLowerCase().includes(text.toLowerCase()) ||
-        e.lastName.includes(text) ||
-        e.teamName.toLowerCase().includes(text.toLowerCase())
+        e.lastName.toLowerCase().includes(text.toLowerCase()) ||
+        e.teamName.toLowerCase().includes(text.toLowerCase()) ||
+        e.playerNo >= text ||
+        e.estimatedValue >= text
     );
     setTradingData(filteredData);
   };

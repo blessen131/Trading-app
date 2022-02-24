@@ -4,10 +4,10 @@ import { FaPrint } from "react-icons/fa";
 import jsPDF from "jspdf";
 import "jspdf-autotable";
 function TradingStatus() {
-  const { currentData } = useContext(TradingContext);
+  const { tradingData } = useContext(TradingContext);
 
   const initialValue = 0;
-  const sumWithInitial = currentData.reduce(
+  const sumWithInitial = tradingData.reduce(
     (previousValue, currentValue) =>
       Number(previousValue) + Number(currentValue.estimatedValue),
     initialValue
@@ -27,7 +27,7 @@ function TradingStatus() {
     const title = "Player Report";
     const headers = [["Name", "Team Name", "Player No", "Estimated Value"]];
 
-    const data = currentData.map((item) => [
+    const data = tradingData.map((item) => [
       item.firstName + " " + item.lastName,
       item.teamName,
       item.playerNo,
