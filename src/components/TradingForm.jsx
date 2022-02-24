@@ -38,6 +38,7 @@ function TradingForm() {
         playerNo: "",
         estimatedValue: "",
       });
+      window.scrollTo(0, document.body.scrollHeight);
     }
   };
 
@@ -110,8 +111,6 @@ function TradingForm() {
           />
         </div>
         <Button type="submit">Add to list</Button>
-
-        {/* {message && <div className="message">{message}</div>} */}
       </form>
     </Card>
   );

@@ -1,9 +1,14 @@
 import TradingForm from "../TradingForm";
 import TradingLists from "../TradingLists";
 import TradingStatus from "../TradingStatus";
-
+import { useContext, useEffect } from "react";
+import TradingContext from "../../context/TradingContext";
 function Home() {
-return (
+  const { fetchTradingData } = useContext(TradingContext);
+  useEffect(() => {
+    fetchTradingData();
+  }, []);
+  return (
     <>
       <TradingForm />
       <TradingStatus />

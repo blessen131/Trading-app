@@ -51,7 +51,7 @@ function TradingStatus() {
   return (
     <div>
       <div className="trading-stats">
-        <h4>Total : {sumWithInitial ?? 0}</h4>
+        <h4>Total estimated value: {sumWithInitial ?? 0}</h4>
 
         <button className="btn btn-primary" onClick={() => exportPDF()}>
           <FaPrint />
